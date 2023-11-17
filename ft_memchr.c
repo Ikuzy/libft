@@ -6,7 +6,7 @@
 /*   By: ozouine <ozouine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/12 18:12:38 by ozouine           #+#    #+#             */
-/*   Updated: 2023/11/12 18:23:57 by ozouine          ###   ########.fr       */
+/*   Updated: 2023/11/17 11:28:40 by ozouine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,12 @@
 void	*ft_memchr(const void *s, int c, size_t n)
 {
 	size_t	i;
-	
+
 	i = 0;
 	while (i < n)
 	{
 		if (((const unsigned char *)s)[i] == (unsigned char)c)
-			return ((void*)(unsigned char*)s + i);
+			return ((void *)(unsigned char *)s + i);
 		i++;
 	}
 	return (NULL);

@@ -6,25 +6,24 @@
 /*   By: ozouine <ozouine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 22:14:53 by ozouine           #+#    #+#             */
-/*   Updated: 2023/11/10 17:10:09 by ozouine          ###   ########.fr       */
+/*   Updated: 2023/11/14 21:11:39 by ozouine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+// #include "libft.h"
 
-int	main(void)
-{
-	char		dest[4] ;
-	const char	src[] = "zouine";
-	// char		dest2[] = "";
-	// const char	src2[] = "zouine";
+// int	main(void)
+// {
+// 	char		dest[] = "";
+// 	const char	src[] = "";
+// 	char		dest2[] = "";
+// 	const char	src2[] = "zouine";
 
-	memmove(dest, src, 4);
-	for (int i = 0; i < 4; i++)
-		printf("%c, \n", dest[i]);
-	printf("************\n");
-	ft_memmove(dest, src, 4);
+// 	printf("%s  \n",memchr(NULL, '\0', 4));
 
-	for (int b = 0; b < 4; b++)
-		printf("%c, \n", dest[b]);
-}
+// 	printf("************\n");
+// 	ft_memmove(dest, src, 4);
+
+	// memmove(NULL, NULL, 3);
+	// for (int b = 0; b < 3; b++)
+	// 	printf("%d, \n", dest[b]);

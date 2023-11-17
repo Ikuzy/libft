@@ -1,32 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ozouine <ozouine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/10 16:06:41 by ozouine           #+#    #+#             */
-/*   Updated: 2023/11/17 11:23:40 by ozouine          ###   ########.fr       */
+/*   Created: 2023/11/15 20:47:03 by ozouine           #+#    #+#             */
+/*   Updated: 2023/11/17 11:28:07 by ozouine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+char	*ft_strdup(const char *s)
 {
-	size_t			i;
-	unsigned char	*dst;
-	unsigned char	*srce;
+	char	*dup;
+	size_t	i;
 
-	i = 0;
-	dst = (unsigned char *)dest;
-	srce = (unsigned char *)src;
-	if (dest == NULL && src == NULL)
+	i = ft_strlen(s);
+	dup = malloc(sizeof(char) * i + 1);
+	if (!dup)
 		return (NULL);
-	while (i < n)
+	i = 0;
+	while (s[i])
 	{
-		dst[i] = srce[i];
+		dup[i] = s[i];
 		i++;
 	}
-	return (dst);
+	dup[i] = '\0';
+	return (dup);
 }
