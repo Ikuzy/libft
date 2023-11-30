@@ -21,6 +21,7 @@ ft_lstmap_bonus.c ft_lstadd_front_bonus.c\
 ft_lstlast_bonus.c ft_lstsize_bonus.c ft_lstiter_bonus.c\
 
 OBJ = $(SRC:.c=.o)
+
 OBONUS = $(BONUS:.c=.o)
 
 all: $(NAME)

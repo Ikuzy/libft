@@ -6,7 +6,7 @@
 /*   By: ozouine <ozouine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 20:15:47 by ozouine           #+#    #+#             */
-/*   Updated: 2023/11/30 16:38:45 by ozouine          ###   ########.fr       */
+/*   Updated: 2023/11/30 17:22:08 by ozouine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,4 +35,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 		lst = lst->next;
 	}
 	return (new_lst);
+
+
+
 }

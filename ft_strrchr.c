@@ -6,7 +6,7 @@
 /*   By: ozouine <ozouine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 22:25:55 by ozouine           #+#    #+#             */
-/*   Updated: 2023/11/29 04:42:14 by ozouine          ###   ########.fr       */
+/*   Updated: 2023/11/30 17:01:14 by ozouine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,3 @@ char	*ft_strrchr(const char *s, int c)
 	}
 	return (NULL);
 }
-// int main()
-// {
-// 	char s[] = "tripouille";
-// 	char *c = ft_strrchr(s, 't' + 256);
-// 	printf("%s\n", c);
-// }
