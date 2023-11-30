@@ -35,9 +35,6 @@ $(OBONUS): $(BONUS)
 		$(CC) $(CFLAGS) -c $(BONUS)
 				ar rc $(NAME) $(OBONUS)
 
-so:
-	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRC) $(BONUS)
-	gcc -nostartfiles -shared -o libft.so $(OBJ)
 
 clean:
 		$(RM) $(OBJ) $(OBONUS)
