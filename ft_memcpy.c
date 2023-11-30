@@ -6,7 +6,7 @@
 /*   By: ozouine <ozouine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 16:06:41 by ozouine           #+#    #+#             */
-/*   Updated: 2023/11/17 11:23:40 by ozouine          ###   ########.fr       */
+/*   Updated: 2023/11/27 20:17:31 by ozouine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	unsigned char	*dst;
 	unsigned char	*srce;
 
+	if (dest == src)
+		return (dest);
 	i = 0;
 	dst = (unsigned char *)dest;
 	srce = (unsigned char *)src;

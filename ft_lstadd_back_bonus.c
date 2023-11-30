@@ -1,35 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_lstadd_back_bonus.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ozouine <ozouine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/12 16:11:50 by ozouine           #+#    #+#             */
-/*   Updated: 2023/11/28 22:47:14 by ozouine          ###   ########.fr       */
+/*   Created: 2023/11/27 03:11:48 by ozouine           #+#    #+#             */
+/*   Updated: 2023/11/30 13:32:18 by ozouine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_memcmp(const void *s1, const void *s2, size_t n)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	size_t			i;
-	unsigned char	*p1;
-	unsigned char	*p2;
+	t_list	*tmp;
 
-	i = 0;
-	if (s1 == s2)
-		return (0);
-	p1 = (unsigned char *)s1;
-	p2 = (unsigned char *)s2;
-	if (n < 1)
-		return (0);
-	while (i < n)
+	if (lst == NULL || new == NULL)
+		return ;
+	tmp = *lst;
+	if (tmp)
 	{
-		if (p1[i] != p2[i])
-			return (p1[i] - p2[i]);
-		i++;
+		tmp = ft_lstlast(tmp);
+		tmp->next = new;
 	}
-	return (0);
+	else
+		*lst = new;
 }

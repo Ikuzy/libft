@@ -6,7 +6,7 @@
 /*   By: ozouine <ozouine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 21:14:40 by ozouine           #+#    #+#             */
-/*   Updated: 2023/11/17 11:27:45 by ozouine          ###   ########.fr       */
+/*   Updated: 2023/11/30 13:33:55 by ozouine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 
 	dest_len = 0;
 	i = 0;
-	if ((!dst || !src) && size == 0)
+	if (!dst && size == 0)
 		return (0);
 	while (dst[dest_len] && dest_len <= size)
 		dest_len++;

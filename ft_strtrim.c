@@ -1,35 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ozouine <ozouine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/12 16:11:50 by ozouine           #+#    #+#             */
-/*   Updated: 2023/11/28 22:47:14 by ozouine          ###   ########.fr       */
+/*   Created: 2023/11/23 21:47:38 by ozouine           #+#    #+#             */
+/*   Updated: 2023/11/24 22:53:09 by ozouine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_memcmp(const void *s1, const void *s2, size_t n)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-	size_t			i;
-	unsigned char	*p1;
-	unsigned char	*p2;
+	int	i;
+	int	l;
 
 	i = 0;
-	if (s1 == s2)
-		return (0);
-	p1 = (unsigned char *)s1;
-	p2 = (unsigned char *)s2;
-	if (n < 1)
-		return (0);
-	while (i < n)
-	{
-		if (p1[i] != p2[i])
-			return (p1[i] - p2[i]);
+	if (!s1)
+		return (NULL);
+	if (!set)
+		return ((char *)s1);
+	while (s1[i] && ft_strchr(set, s1[i]))
 		i++;
-	}
-	return (0);
+	s1 += i;
+	l = ft_strlen(s1) - 1;
+	while (l > 0 && ft_strchr(set, s1[l]))
+		l--;
+	s1 = ft_substr(s1, 0, l + 1);
+	return ((char *)s1);
 }

@@ -1,35 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ozouine <ozouine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/12 16:11:50 by ozouine           #+#    #+#             */
-/*   Updated: 2023/11/28 22:47:14 by ozouine          ###   ########.fr       */
+/*   Created: 2023/11/24 22:55:56 by ozouine           #+#    #+#             */
+/*   Updated: 2023/11/24 22:57:16 by ozouine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_memcmp(const void *s1, const void *s2, size_t n)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	size_t			i;
-	unsigned char	*p1;
-	unsigned char	*p2;
+	char	*result;
+	size_t	i;
+	size_t	len;
 
+	if (s == NULL || f == NULL)
+		return (NULL);
+	len = ft_strlen(s);
+	result = (char *)malloc(sizeof(char) * (len + 1));
+	if (!result)
+		return (NULL);
 	i = 0;
-	if (s1 == s2)
-		return (0);
-	p1 = (unsigned char *)s1;
-	p2 = (unsigned char *)s2;
-	if (n < 1)
-		return (0);
-	while (i < n)
+	while (i < len)
 	{
-		if (p1[i] != p2[i])
-			return (p1[i] - p2[i]);
+		result[i] = f(i, s[i]);
 		i++;
 	}
-	return (0);
+	result[len] = '\0';
+	return (result);
 }
